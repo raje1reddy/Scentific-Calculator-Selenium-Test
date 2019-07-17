@@ -24,12 +24,7 @@ public class ScientificCalculatorSeleniumTest {
         elementScientificCalcLink.click();
 
 
-        //calculate sin 90
-        // how to do it
-        //  Click sin
-        // click 9
-        // click  0
-        // click =
+        //calculate sin 90// how to do it//  Click sin // click 9 // click  0 // click =
         WebElement elementSinButton =  driver.findElement(By.xpath("//body//div[@id='content']//div//div[2]//div[1]//span[1]"));
         elementSinButton.click();
 
@@ -46,16 +41,21 @@ public class ScientificCalculatorSeleniumTest {
 
 
         // Read result
-        WebElement resultElement = driver.findElement(By.xpath("//div[@id='sciOutPut']"));
-        String result = resultElement.getText();
+        WebElement resultSin90 = driver.findElement(By.xpath("//div[@id='sciOutPut']"));
+        String result = resultSin90.getText();
+        result = result.replaceAll("\\s+","");
+        System.out.println("String value of Sin90 is " + result);
         //driver.findElement(By.xpath("//div[@id='sciOutPut']"))
         // verify if the result is 1
-        if(result.equals("1")){
+       /* if(result.equals("1")){
             System.out.println("pass");
         }
         else {
             System.out.println("fail");
-        }
+        }*/
+
+        String valueSin90=Check(result);
+        System.out.println(valueSin90);
 // Reset calculator by click "AC" button
         WebElement elementresetButton =
         driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[3]/div[5]/span[3]"));
@@ -75,16 +75,21 @@ public class ScientificCalculatorSeleniumTest {
                 driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
         elementisequaltoButton1 .click();
 // Read result
-        WebElement resultElement1 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
-        String result1 = resultElement1.getText();
+        WebElement resultCos0 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
+        String result1 = resultCos0.getText();
+        result1 = result1.replaceAll("\\s+","");
+        System.out.println("String value of Cos0 is " + result1);
         //driver.findElement(By.xpath("//div[@id='sciOutPut']"))
         // verify if the result is 1
-        if(result1.equals("1")){
+        /*if(result1.equals("1")){
             System.out.println("pass");
         }
         else {
             System.out.println("fail");
-        }
+        }*/
+
+        String valueCos0=Check(result1);
+        System.out.println(valueCos0);
 
         // Reset calculator by click "AC" button
         WebElement elementresetButton2 =
@@ -108,16 +113,20 @@ public class ScientificCalculatorSeleniumTest {
 // verify the result is 1.
 // if reset is 1 print pass or print fail.
 // Read result
-        WebElement resultElement3 = driver.findElement(By.xpath("//div[@id='sciOutPut']"));
-        String result3 = resultElement.getText();
+        WebElement resultTan45 = driver.findElement(By.xpath("//div[@id='sciOutPut']"));
+        String result3 = resultTan45.getText();
+        result3 = result3.replaceAll("\\s+","");
+        System.out.println("String value of Tan45 is " + result3);
         //driver.findElement(By.xpath("//div[@id='sciOutPut']"))
         // verify if the result is 1
-        if(result3.equals("1")){
+       /* if(result3.equals("1")){
             System.out.println("pass");
         }
         else {
             System.out.println("fail");
-        }
+        }*/
+        String valuetan45=Check(result3);
+        System.out.println(valuetan45);
         // Reset calculator by click "AC" button
 // calculate tan 0
 // Read result
@@ -137,17 +146,20 @@ public class ScientificCalculatorSeleniumTest {
                 driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
         elementisequaltoButton2 .click();
 // Read result
-        WebElement resultElement2 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
-        String result2 = resultElement1.getText();
+        WebElement resultTan0 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
+        String result6 = resultTan0.getText();
+        result6 = result6.replaceAll("\\s+","");
+        System.out.println("String value of Tan0 is " + result6);
         //driver.findElement(By.xpath("//div[@id='sciOutPut']"))
         // verify if the result is 1
-        if(result2.equals("1")){
+        /*if(result6.equals("0")){
             System.out.println("pass");
         }
         else {
             System.out.println("fail");
-        }
-
+        }*/
+        String valuetan0=Check(result6);
+        System.out.println(valuetan0);
       /* //select text box1
         WebElement textBox1 =   driver.findElement(By.xpath("//input[@id='cpar1']"));
         // enter a value in Text box 1  ->> 10
@@ -220,21 +232,39 @@ public class ScientificCalculatorSeleniumTest {
         WebElement elementzeroButton3 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[3]/div[4]/span[1]"));
         elementzeroButton3.click();
 
-        WebElement elementisequaltoButton5 =
-                driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
+        WebElement elementisequaltoButton5 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
         elementisequaltoButton5 .click();
 // Read result
-        WebElement resultElement5 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
-        String result5 = resultElement5.getText();
+        WebElement resultTan90 = driver.findElement(By.xpath("//div[@id='sciOutPut']"));
+        WebElement elementisequaltoButton9 = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]"));
+        elementisequaltoButton5 .click();
+        String result8 = resultTan90.getText();
+        result8 = result.replaceAll("\\s+","");
+        System.out.println("String value of Tan90 is " + result8);
         //driver.findElement(By.xpath("//div[@id='sciOutPut']"))
         // verify if the result is 1
-        if(resultElement5.equals("1")){
-            System.out.println("pass");
-        }
-        else {
-            System.out.println("fail");
-        }
+//        if(result8.equals("1")){
+//            System.out.println("pass");
+//        }
+//        else {
+//            System.out.println("fail");
+//        }
+        String valuetan90=Check(result8);
+        System.out.println(valuetan90);
 
+    }
+
+    static  String Check(String results){
+        String returnval = "";
+        if(results == "1"){
+            returnval = "pass";
+        }
+        else if(results == "0")
+            returnval = "fail";
+        else {
+            returnval = "pass";
+        }
+        return  returnval;
     }
 }
 
